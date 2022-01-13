@@ -3,9 +3,9 @@ import "./ExpenseForm.css";
 import {useState} from 'react';
 
 function ExpenseForm(props) {
-  const [titulo,setTitulo] = useState('');
-  const [preco,setPreco] = useState('');
-  const [dia,setData] = useState('');
+  const [titulodoDADO,setTitulo] = useState('');
+  const [precodoDADO,setPreco] = useState('');
+  const [diadoDADO,setData] = useState('');
   
 
   const pegarTitulo = (event) => {
@@ -21,9 +21,9 @@ function ExpenseForm(props) {
   const mandarFormulario = (event) =>{
     event.preventDefault();
     const Dado = {
-      titulo: titulo,
-      preco: preco,
-      dia: new Date(dia)
+      nome: titulodoDADO,
+      preco: precodoDADO,
+      tempo: new Date(diadoDADO)
     };
 
     props.onSaveData(Dado);
@@ -36,15 +36,16 @@ function ExpenseForm(props) {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Nome</label>
-          <input type="text" value={titulo} onChange={pegarTitulo}></input>
+          <input type="text" value={titulodoDADO} onChange={pegarTitulo}></input>
         </div>
         <div className="new-expense__control">
           <label>Preço</label>
-          <input type="number" min="0.01" step="0.01" value={preco} onChange={pegarPreco}/>
+          <input type="number" min="0.01" step="0.01" value={precodoDADO} onChange={pegarPreco}/>
         </div>
         <div className="new-expense__control">
           <label>Data</label>
-          <input type="date" value={dia} onChange={pegarData}></input>
+          <input type="date"  min='2019-01-01'
+            max='2022-12-31'  value={diadoDADO} onChange={pegarData}></input>
         </div>
       </div>
       <div className="new-expense__actions">

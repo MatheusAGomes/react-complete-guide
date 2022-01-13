@@ -5,9 +5,9 @@ function NewExpense (props) {
     const salvarDado = dado =>{
         const expenseData ={
             ...dado,
-            id: Math.random.toString()
+            id: Math.random().toString()
         }
-        //console.log(expenseData);
+        
         props.adicionarGasto(expenseData);
     }
 
