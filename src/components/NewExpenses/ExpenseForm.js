@@ -18,6 +18,7 @@ function ExpenseForm(props) {
     setData(event.target.value);
   };
 
+
   const mandarFormulario = (event) =>{
     event.preventDefault();
     const Dado = {
@@ -49,6 +50,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+          <button type="reset" onClick={props.onCancelEvent} >Cancelar</button>
           <button type="submit">Adicionar</button>
         </div>
     </form>

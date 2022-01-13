@@ -5,13 +5,15 @@ import ExpenseDate from './ExpenseDate';
 const  ExpenseItem = (props) => {
  
   return (
+    <li>
   <Card className='expense-item'>
       <ExpenseDate tempo={props.tempo}/>
       <div className='expense-item__description'>
       <h2>{props.nome}</h2>
       <div className='expense-item__price'>${props.preco}</div>
       </div>
-  </Card>);
+  </Card>
+  </li>);
 }
 
 export default ExpenseItem;

@@ -1,5 +1,5 @@
 import {useState} from "react"
-import ExpenseItem from "./ExpenseItem";
+import ExpenseList from "./ExpenseList";
 import "./Expense.css"
 import Card from "../UI/Card"
 import ExpensesFilter from "./ExpenseFilter";
@@ -12,18 +12,16 @@ const Expense = (props) => {
 
 
     function yearFilter(arr) {
-        return arr.tempo.getFullYear() == anoFiltrado;
+        return arr.tempo.getFullYear().toString() === anoFiltrado;
     }
-
-    console.log(props.arr)
     let arrayfiltrado = props.arr.filter(yearFilter)
-    console.log(arrayfiltrado)
-
+    
+    
 
     return (
         <Card className="expenses">
         <ExpensesFilter gatilhoAnoFiltro={anoFiltro} ano={anoFiltrado}/>
-        {arrayfiltrado.map(expense => <ExpenseItem key={expense.id} nome={expense.nome} preco={expense.preco} tempo={expense.tempo} />)}
+        <ExpenseList item={arrayfiltrado} />
         </Card>
     );
 
