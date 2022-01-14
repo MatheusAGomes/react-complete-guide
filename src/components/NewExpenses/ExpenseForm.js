@@ -23,7 +23,7 @@ function ExpenseForm(props) {
     event.preventDefault();
     const Dado = {
       nome: titulodoDADO,
-      preco: precodoDADO,
+      preco: +precodoDADO,
       tempo: new Date(diadoDADO)
     };
 
